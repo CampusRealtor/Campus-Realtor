@@ -86,29 +86,40 @@ html, body {
   align-items: center;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50px;
-  padding: 25px 30px;
+  padding: 15px 20px; /* reduced padding */
   margin: 20px auto;
   width: 95%;
   max-width: 1300px;
   z-index: 100;
   position: relative;
+
+  /* allow wrap for small screens */
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .navbar .logo {
-  font-size: 30px;
+  font-size: 24px; /* smaller on mobile */
   font-weight: bold;
   color: white;
+  white-space: nowrap; /* prevent breaking words */
+  flex-grow: 1; /* take available space */
+}
+
+.join-btn {
+  flex-shrink: 0; /* prevent shrinking */
 }
 
 .join-btn .btn {
   background-color: white;
   color: black;
   font-weight: bold;
-  padding: 15px 20px;
+  padding: 10px 15px; /* smaller padding */
   border-radius: 10px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px; /* smaller font */
   transition: background 0.3s, color 0.3s;
+  white-space: nowrap; /* keep button text on one line */
 }
 
 .join-btn .btn:hover {
@@ -177,7 +188,9 @@ html, body {
   color: rgb(255, 193, 61);
 }
 
-/* Responsive */
+/* Responsive tweaks */
+
+/* For tablets and smaller */
 @media (max-width: 768px) {
   .logo-center img {
     position: static;
@@ -192,5 +205,37 @@ html, body {
 
   .title h1 {
     font-size: 12vw;
+  }
+}
+
+/* For mobile phones (Android) */
+@media (max-width: 480px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+    text-align: center;
+    flex-basis: 100%; /* full width */
+  }
+
+  .join-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .join-btn .btn {
+    font-size: 18px;
+    padding: 12px 25px;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .logo-center img {
+    position: static;
+    width: 80px;
+    margin: 20px auto 40px auto;
   }
 }
