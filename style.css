@@ -10,6 +10,7 @@ html, body {
   background-color: #1d2976;
   color: white;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Sidebar */
@@ -23,6 +24,7 @@ html, body {
   padding-top: 60px;
   transition: left 0.3s ease;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .sidebar.active {
@@ -31,6 +33,7 @@ html, body {
 
 .sidebar ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .sidebar ul li a {
@@ -39,6 +42,7 @@ html, body {
   text-decoration: none;
   color: white;
   font-size: 18px;
+  transition: background 0.3s;
 }
 
 .sidebar ul li a:hover {
@@ -96,27 +100,6 @@ html, body {
   color: white;
 }
 
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.menu ul li a:hover {
-  color: yellow;
-}
-
-.menu ul li a:active {
-  color: #2f3ea6;
-}
-
 .join-btn .btn {
   background-color: white;
   color: black;
@@ -125,6 +108,7 @@ html, body {
   border-radius: 10px;
   text-decoration: none;
   font-size: 18px;
+  transition: background 0.3s, color 0.3s;
 }
 
 .join-btn .btn:hover {
@@ -146,6 +130,7 @@ html, body {
   padding-top: 80px;
   text-align: center;
   position: relative;
+  min-height: 80vh;
 }
 
 .logo-center img {
@@ -165,6 +150,8 @@ html, body {
   border-radius: 5px;
   margin-bottom: 30px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
 .df:hover {
@@ -179,7 +166,7 @@ html, body {
 .title h1 {
   font-size: 10vw;
   line-height: 1;
-  font-family: 'Franklin Gothic Medium';
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
 .white {
@@ -190,24 +177,12 @@ html, body {
   color: rgb(255, 193, 61);
 }
 
-.content {
-  padding: 50px;
-  min-height: 1000px;
-}
 /* Responsive */
 @media (max-width: 768px) {
-  .menu {
-    display: none;
-  }
-
   .logo-center img {
-    top: 100px;
-    right: 20px;
+    position: static;
     width: 80px;
-  }
-
-  .logo-center img:hover {
-    opacity: 0.8;
+    margin: 20px auto 40px auto;
   }
 
   .df {
@@ -216,8 +191,6 @@ html, body {
   }
 
   .title h1 {
-    font-size: 10vw;
+    font-size: 12vw;
   }
 }
-
-
