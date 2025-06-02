@@ -8,49 +8,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-  <!-- Navbar without Join button -->
-  <div class="navbar">
-    <h2 class="logo">CAMPUS REALTOR</h2>
-    <nav class="menu">
-      <ul>
-        <li><a href="https://campusrealtor.github.io/Campus-Realtor/">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">MISSION & VISION</a></li>
-        <li><a href="#">CONTACT</a></li>
-      </ul>
-    </nav>
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">MISSION & VISION</a></li>
+      <li><a href="#">CONTACT</a></li>
+      <li><a href="#">AGENTS</a></li>
+      <li><a href="#">MEMBERS</a></li>
+      <li><a href="#">NEWBIE</a></li>
+      <li><a href="#">SUCCESS</a></li>
+      <li><a href="#">EVENTS</a></li>
+      <li><a href="#">SCHEDULE</a></li>
+    </ul>
   </div>
 
+  <div class="overlay" id="overlay"></div>
+  <div class="toggle-btn" id="toggle-btn">☰</div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2 class="logo">CAMPUS REALTOR</h2>
+  </div>
+
+  <!-- Centered Logo -->
   <div class="logo-center">
     <img src="yellowlogo.png" alt="Campus Realtor Logo" />
   </div>
 
+  <!-- Join Form -->
   <div class="join-container">
     <h1>JOIN CAMPUS REALTOR</h1>
 
-<form action="https://formsubmit.co/joshualavistoepic@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://campusrealtor.github.io/Campus-Realtor/thankyou.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_autoresponse" value="Thank you for joining Campus Realtor! We'll contact you soon." />
-  <input type="hidden" name="_template" value="table" />
-      
+    <form action="https://formsubmit.co/joshualavistoepic@gmail.com" method="POST">
+      <!-- Hidden fields -->
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_autoresponse" value="Thank you for joining Campus Realtor! We'll contact you soon.">
+      <input type="hidden" name="_template" value="table">
+
+      <!-- Visible fields -->
       <label for="firstName">First Name*</label>
-      <input type="text" id="firstName" name="First Name" required />
+      <input type="text" id="firstName" name="First Name" required>
 
       <label for="middleName">Middle Name (optional)</label>
-      <input type="text" id="middleName" name="Middle Name" />
+      <input type="text" id="middleName" name="Middle Name">
 
       <label for="lastName">Last Name*</label>
-      <input type="text" id="lastName" name="Last Name" required />
+      <input type="text" id="lastName" name="Last Name" required>
 
       <label for="schedule">Schedule Set*</label>
-      <input type="datetime-local" id="schedule" name="Schedule" required />
+      <input type="datetime-local" id="schedule" name="Schedule" required>
 
       <label for="email">Email*</label>
-      <input type="email" id="email" name="Email" required />
+      <input type="email" id="email" name="Email" required>
 
       <label for="phone">Phone Number*</label>
-      <input type="tel" id="phone" name="Phone Number" required />
+      <input type="tel" id="phone" name="Phone Number" required>
+
+      <label for="facebook">Your Facebook name/username</label>
+      <input type="text" id="facebook" name="Facebook Username">
 
       <label for="talent">What is your super power?*</label>
       <textarea id="talent" name="Super Power" rows="3" required></textarea>
@@ -60,5 +78,7 @@
 
     <button class="back-btn" onclick="window.history.back()">Back</button>
   </div>
+
+  <script src="join.js"></script>
 </body>
 </html>
