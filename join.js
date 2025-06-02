@@ -1,30 +1,21 @@
-const form = document.getElementById('join-form');
-const messageDiv = document.getElementById('message');
+// Sidebar toggle logic
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const toggleBtn = document.getElementById("toggle-btn");
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+function toggleSidebar() {
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
 
-  const formData = {
-    firstName: form.firstName.value.trim(),
-    middleName: form.middleName.value.trim(),
-    lastName: form.lastName.value.trim(),
-    schedule: form.schedule.value,
-    email: form.email.value.trim(),
-    talent: form.talent.value.trim()
-  };
-
-  // Simple validation
-  if (!formData.firstName || !formData.lastName || !formData.schedule || !formData.email || !formData.talent) {
-    messageDiv.style.color = 'red';
-    messageDiv.textContent = 'Please fill in all required fields.';
-    return;
+  // Prevent body scrolling when sidebar is active
+  if (sidebar.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
   }
+}
 
-  // Here you would send data to backend/server or external API
-  // For demo, we just show success message
+toggleBtn.addEventListener("click", toggleSidebar);
+overlay.addEventListener("click", toggleSidebar);
 
-  messageDiv.style.color = 'lightgreen';
-  messageDiv.textContent = 'Thank you for joining! Your information has been received.';
 
-  form.reset();
-});
